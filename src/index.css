@@ -40,15 +40,14 @@ code {
     margin-left: 10px;
 }
 
-
 .linky {
     cursor: pointer;
 }
 
 .treeElement {
-    padding-left:10px;
+    padding-left: 10px;
 }
 
 .treeChild {
-    padding-left:15px;
+    padding-left: 15px;
 }

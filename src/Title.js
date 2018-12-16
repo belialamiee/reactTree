@@ -7,9 +7,8 @@ class Title extends React.Component {
     }
 
     render() {
-        return <h1>Create a demon, les doo eet</h1>
+        return <h1>Create a Tree, les doo eet</h1>
     }
 }
-
 
 export default Title;
