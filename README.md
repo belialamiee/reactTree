@@ -3,6 +3,9 @@ This is a simple tree building example in my learning React
 
 In the project directory, you can run:
 
+### `npm install`
+Run this command after cloning this repo.
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
