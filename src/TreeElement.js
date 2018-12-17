@@ -21,14 +21,16 @@ class TreeElement extends React.Component {
         let indentStyle = {marginLeft: this.props.indent}
         if (this.state.displayChild) {
             description = <p className="elementDescription">{this.props.description}</p>;
-            for (let i = 0; i < this.props.children.length; i++) {
-                children.push(<TreeElement
-                        title={this.props.children[i].title}
-                        description={this.props.children[i].description}
-                        children={this.props.children[i].children}
-                        indent={this.props.indent + 20}
-                    />
-                )
+            if(this.props.children !== undefined){
+                for (let i = 0; i < this.props.children.length; i++) {
+                    children.push(<TreeElement
+                            title={this.props.children[i].title}
+                            description={this.props.children[i].description}
+                            children={this.props.children[i].children}
+                            indent={this.props.indent + 20}
+                        />
+                    )
+                }
             }
         }
 

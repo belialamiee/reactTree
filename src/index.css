@@ -40,14 +40,16 @@ code {
     margin-left: 10px;
 }
 
-.linky {
+.collapseWidget {
     cursor: pointer;
 }
 
 .treeElement {
     padding-left: 10px;
+    color:blue;
 }
 
 .treeChild {
     padding-left: 15px;
 }
+

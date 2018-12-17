@@ -3,21 +3,14 @@ import TreeElement from './TreeElement';
 
 class CodeBody extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            'content': props.content
-        };
-    }
-
     render() {
         let treeElements = [];
-        for (let i = 0; i < this.state.content.length; i++) {
+        for (let i = 0; i < this.props.content.length; i++) {
             treeElements.push(<TreeElement
                 key={Math.random()}
-                title={this.state.content[i].title}
-                description={this.state.content[i].description}
-                children={this.state.content[i].children}
+                title={this.props.content[i].title}
+                description={this.props.content[i].description}
+                children={this.props.content[i].children}
                 indent={0}
             />);
         }
