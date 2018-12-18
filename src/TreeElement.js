@@ -6,39 +6,40 @@ class TreeElement extends React.Component {
         super(props);
         this.state = {
             'displayChild': false
-
         };
         this.collapse = this.collapse.bind(this);
     }
 
     collapse() {
+        console.log(this.props.id)
+        this.props.descriptionCallBack.bind(null, this.props.description);
         this.setState({'displayChild': !this.state.displayChild});
     }
 
     render() {
-        let description = "";
         let children = [];
-        let indentStyle = {marginLeft: this.props.indent}
+        let indentStyle = {marginLeft: this.props.indent};
         if (this.state.displayChild) {
-            description = <p className="elementDescription">{this.props.description}</p>;
-            if(this.props.children !== undefined){
-                for (let i = 0; i < this.props.children.length; i++) {
-                    children.push(<TreeElement
-                            title={this.props.children[i].title}
-                            description={this.props.children[i].description}
-                            children={this.props.children[i].children}
-                            indent={this.props.indent + 20}
-                        />
-                    )
-                }
+            if (this.props.children !== undefined) {
+                children = this.props.children.map((child) => {
+                    return <TreeElement
+                        key={child.id}
+                        id={child.id}
+                        descriptionCallBack={this.props.descriptionCallBack}
+                        title={child.title}
+                        description={child.description}
+                        children={child.children}
+                        indent={this.props.indent + 20}
+                    />
+                });
             }
         }
 
-        return [<div className='treeElement' style={indentStyle}>{this.props.title} <CollapseIcon
-            key={Math.random()}
+        return [<div className='treeElement' key={this.props.id}
+                     style={indentStyle}>{this.props.title} <CollapseIcon
             collapse={this.collapse}
+            hasChildren={this.props.children !== undefined}
             open={this.state.displayChild}/></div>,
-            <div style={indentStyle}>{description}</div>,
             children
         ];
     }

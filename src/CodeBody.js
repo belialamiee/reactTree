@@ -2,21 +2,20 @@ import React from 'react';
 import TreeElement from './TreeElement';
 
 class CodeBody extends React.Component {
-
     render() {
-        let treeElements = [];
-        for (let i = 0; i < this.props.content.length; i++) {
-            treeElements.push(<TreeElement
-                key={Math.random()}
-                title={this.props.content[i].title}
-                description={this.props.content[i].description}
-                children={this.props.content[i].children}
-                indent={0}
-            />);
-        }
         return [
-            <pre className="codeBody">Content:</pre>,
-            treeElements
+            <pre key="elements" className="codeBody">Content:</pre>,
+            this.props.content.map((element) => {
+                return <TreeElement
+                    key={element.id}
+                    id={element.id}
+                    title={element.title}
+                    descriptionCallBack={this.props.descriptionCallBack}
+                    description={element.description}
+                    children={element.children}
+                    indent={0}
+                />
+            })
         ]
     }
 }
