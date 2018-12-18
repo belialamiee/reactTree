@@ -1,0 +1,36 @@
+[
+  {
+    "id": "1.0",
+    "title": "character",
+    "description": "A Player Character or Non Player Character",
+    "children": [
+      {
+        "id": "1.1",
+        "title": "health",
+        "description": "The hit points for the character, this should be a positive integer, once this hits zero the character is dead"
+      },
+      {
+        "id": "1.2",
+        "title": "mana",
+        "description": "The mana points for the character, this should be a positive integer, this resource is gained draining a lake, and spent by casting spells"
+      },
+      {
+        "id": "1.3",
+        "title": "buffs",
+        "description": "an array of buffs",
+        "children": []
+      },
+      {
+        "id": "1.4",
+        "title": "debuffs",
+        "description": "an array of buffs",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "2.0",
+    "title": "spell",
+    "description": "s powerful damaging spell"
+  }
+]

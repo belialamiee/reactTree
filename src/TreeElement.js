@@ -11,8 +11,7 @@ class TreeElement extends React.Component {
     }
 
     collapse() {
-        console.log(this.props.id)
-        this.props.descriptionCallBack.bind(null, this.props.description);
+        this.props.descriptionCallBack({'description': this.props.description, 'title': this.props.title});
         this.setState({'displayChild': !this.state.displayChild});
     }
 
